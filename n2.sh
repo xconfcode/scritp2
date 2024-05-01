@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-pacman -Syy archlinux-keyring
+pacman -Syy archlinux-keyring --needed --noconfirm
 # ==========================================================================
 #               [Start:: generate lang && Time]
 # ==========================================================================
@@ -70,7 +70,7 @@ grub-install --target=x86_64-efi --bootloader-id=grub_uefi
 echo -e "\nget grub confinguration...\n"
 grub-mkconfig -o /boot/grub/grub.cfg
 
-pacman -S nvidia nvidia-utils
+pacman -S nvidia nvidia-utils --needed --noconfirm
 
 
 # ==========================================================================
