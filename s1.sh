@@ -110,6 +110,8 @@ echo "Successfly storred all mount"
 # ==========================================================================
 echo "copy arch-chroot scripts"
 curl https://raw.githubusercontent.com/xconfcode/scritp2/main/s2.sh -o /mnt/s2.sh && chmod +x  /mnt/s2.sh
+echo
+arch-chroot /mnt sh s2.sh
 
 
 
