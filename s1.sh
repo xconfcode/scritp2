@@ -62,7 +62,7 @@ echo "Successfly Formatted Partition !!!!"
 # Mount target directories
 
 echo "start mounting  into root partition...."
-pacman-key –init && pacman-key --populate && pacman -Syy archlinux-keyring --noconfirm
+
 mount -t ext4 "/dev/$ROOT_PARTITION" /mnt
 echo "Successfly Mounted & created /boot/efi directory !!!!"
 # ==========================================================================
