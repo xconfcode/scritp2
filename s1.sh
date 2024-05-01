@@ -20,6 +20,15 @@ function get_partition {
   done
   echo "$partition"
 }
+function confirm_and_run {
+  local command="$1"
+  echo "Running: $command"
+  read -r -p "Continue? [y/N] " response
+  if [[ ! $response =~ ^([Yy]$) ]]; then
+    exit 1
+  fi
+  eval "$command"
+}
 
 # ==========================================================================
 #               [End:: Confim]
@@ -44,11 +53,19 @@ echo "Creating filesystems..."
 echo "WARNING: Make sure you selected the correct partitions!"
 
 # Create filesystems (use confirm_and_run for safety)
+# Formatting Partion [start]
+echo "Starting Formatting Partition"
+
+ #Informative messages
+echo "Creating filesystems..."
+echo "WARNING: Make sure you selected the correct partitions!"
+
+# Create filesystems (use confirm_and_run for safety)
 echo "Create filesystems .................!"
-mkfs.fat -F32 -n \"EFISYSTEM\" \"/dev/$EFI_PARTITION\"
-mkswap \"/dev/$SWAP_PARTITION\"
+confirm_and_run "mkfs.fat -F32 -n \"EFISYSTEM\" \"/dev/$EFI_PARTITION\""
+confirm_and_run "mkswap \"/dev/$SWAP_PARTITION\""
 swapon "/dev/$SWAP_PARTITION"
-mkfs.ext4 -L  \"ROOT\" \"/dev/$ROOT_PARTITION\"
+confirm_and_run "mkfs.ext4 -L  \"ROOT\" \"/dev/$ROOT_PARTITION\""
 echo "Successfly Formatted Partition !!!!"
 
 # ==========================================================================
