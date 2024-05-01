@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+n#!/usr/bin/env bash
 
 # ==========================================================================
 #               [Start:: Confim]
@@ -111,7 +111,12 @@ echo "Successfly storred all mount"
 echo "copy arch-chroot scripts"
 curl https://raw.githubusercontent.com/xconfcode/scritp2/main/s2.sh -o /mnt/s2.sh && chmod +x  /mnt/s2.sh
 echo
-arch-chroot /mnt sh s2.sh
+
+# Chroot and execute configuration script
+arch-chroot /mnt /bin/bash /s2.sh
+
+# Reboot message
+echo "Installation complete. Reboot using 'reboot'"
 
 
 
