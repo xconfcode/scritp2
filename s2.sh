@@ -92,7 +92,10 @@ pacman -S grub efibootmgr os-prober mtools networkmanager network-manager-applet
 # ==========================================================================
 
 # Bootloader installation (UEFI systems)
-grub-install --target=x86_64-efi --bootloader-id=grub_uefi && grub-mkconfig -o /boot/grub/grub.cfg
+echo " install by grub"
+grub-install --target=x86_64-efi --bootloader-id=grub_uefi 
+echo " get grub confinguration"
+grub-mkconfig -o /boot/grub/grub.cfg
 
 # ==========================================================================
 #               [End:: GRUB]
