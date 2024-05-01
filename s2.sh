@@ -34,7 +34,7 @@ echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo " Enter username then password"
 read -r -p "Username: " USER
 read -s -p "Password: " PASSWORD
-echo " Enter root password"
+echo -e "\nEnter root password"
 passwd
 
 echo
