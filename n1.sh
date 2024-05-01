@@ -73,7 +73,7 @@ echo "Successfly storred all mount"
 # ==========================================================================
 
 echo "copy arch-chroot scripts"
-curl https://raw.githubusercontent.com/xconfcode/scritp2/main/n2.sh -o /mnt/s2.sh && chmod +x  /mnt/n2.sh
+curl https://raw.githubusercontent.com/xconfcode/scritp2/main/n2.sh -o /mnt/n2.sh && chmod +x  /mnt/n2.sh
 echo
 
 # Chroot and execute configuration script
