@@ -13,7 +13,7 @@ cat <<"EOF"
    
 
 EOF
-time sleep 5
+time sleep 3
 
 
 # ==================================================================================
@@ -43,7 +43,7 @@ mkswap "${SWAP}"
 swapon "${SWAP}"
 mkfs.ext4 "${ROOT}"
 echo -e "\nSuccessfully Formatted\n"
-time sleep 5
+time sleep 3
 
 # ==================================================================================
 # [[ Mounting ]] 
@@ -53,7 +53,7 @@ mount  "${ROOT}" /mnt
 mkdir /boot/efi
 mount  "${EFI}" /boot/efi
 echo -e "\nSuccessfully Mounted\n"
-time sleep 5
+time sleep 3
 
 # ==========================================================================
 #   [ Kernal base package]
@@ -64,7 +64,7 @@ echo -e "\nInstalling Arch Linux base...\n"
 pacstrap -K /mnt base linux linux-firmware sudo nano
  
 echo "Installed successsfly  Base system into Linux kernal !!!!"
-time sleep 5
+time sleep 3
 
 # ==========================================================================
 #               [Storing Mount]
@@ -74,7 +74,7 @@ time sleep 5
 echo " Storring mount"
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "Successfly storred all mount"
-time sleep 5
+time sleep 3
 
 # ==========================================================================
 
@@ -84,9 +84,9 @@ echo
 
 # Chroot and execute configuration script
 arch-chroot /mnt /bin/bash /n2.sh
-time sleep 5
+time sleep 3
 
 # Reboot message
 echo "Installation complete. Reboot using 'reboot'"
-time sleep 5
+time sleep 3
 
