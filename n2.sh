@@ -34,7 +34,9 @@ echo "Please enter your HostName"
 read HostName 
 
 echo "uncomment for profile wheels"
-EDITOR=nano visudo
+# EDITOR=nano visudo
+echo -e "\n changing Permission" 
+sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers.tmp
 
 echo -e "\n Storred succefully\n" 
 time sleep 3
