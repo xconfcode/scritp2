@@ -42,7 +42,7 @@ EOF
 # Reset text color
 echo -e "\033[0m"  # Reset to default color
 
-echo -e "\nSuccessfully configured Times....\n"
+echo -e "\nCheck and configured Partiion....\n"
 sudo cfdisk
 clear
 time sleep 3 
@@ -298,7 +298,24 @@ echo -e "\033[0m"  # Reset to default color
 # ==========================================================================
 
 # Time
+
 clear
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 echo -e "\nSetting Times...\n"
 ln -sf /usr/share/zoneinfo/America/New_York   /etc/localtime
 clear
