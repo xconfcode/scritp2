@@ -1,4 +1,36 @@
 #!/usr/bin/env bash
+
+
+cat <<"EOF"
+
+███████╗███╗   ██╗ ██████╗      █████╗ ██████╗ ██████╗ ██╗   ██╗██╗     ██╗      █████╗          █████╗ ██╗     ██████╗  █████╗  ██████╗ ███╗   ███╗ █████╗ ██╗██╗  ██╗██╗
+██╔════╝████╗  ██║██╔════╝     ██╔══██╗██╔══██╗██╔══██╗██║   ██║██║     ██║     ██╔══██╗        ██╔══██╗██║     ██╔══██╗██╔══██╗██╔═══██╗████╗ ████║██╔══██╗██║██║  ██║██║
+█████╗  ██╔██╗ ██║██║  ███╗    ███████║██████╔╝██║  ██║██║   ██║██║     ██║     ███████║        ███████║██║     ██████╔╝███████║██║   ██║██╔████╔██║███████║██║███████║██║
+██╔══╝  ██║╚██╗██║██║   ██║    ██╔══██║██╔══██╗██║  ██║██║   ██║██║     ██║     ██╔══██║        ██╔══██║██║     ██╔══██╗██╔══██║██║   ██║██║╚██╔╝██║██╔══██║██║██╔══██║██║
+███████╗██║ ╚████║╚██████╔╝    ██║  ██║██████╔╝██████╔╝╚██████╔╝███████╗███████╗██║  ██║███████╗██║  ██║███████╗██║  ██║██║  ██║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║██║  ██║██║
+╚══════╝╚═╝  ╚═══╝ ╚═════╝     ╚═╝  ╚═╝╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝
+                                                                                                                                                                          
+   
+
+EOF
+time sleep 5
+
+
+
+echo "Please enter your username"
+read USER 
+
+echo "Please enter your password"
+read PASSWORD 
+
+echo -e "\nEnter root password"  # Newline with echo -e
+passwd
+
+echo "Please enter your HostName"
+read HostName 
+
+echo -e "\n Storred succefully\n" 
+time sleep 5
 pacman -Syy archlinux-keyring --needed --noconfirm
 # ==========================================================================
 #               [Start:: generate lang && Time]
@@ -8,17 +40,24 @@ pacman -Syy archlinux-keyring --needed --noconfirm
 
 echo -e "\nSetting Times...\n"
 ln -sf /usr/share/zoneinfo/America/New_York   /etc/localtime
+clear
 echo -e "\nSuccessfly configure Times....\n"
 
+time sleep 5
 
 sudo sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 sudo sed -i 's/^#en_US ISO-8859-1/en_US ISO-8859-1/' /etc/locale.gen
+echo -e "\nSuccessfly Uncomment for locale-gen....\n"
 
+time sleep 5
 locale-gen
 hwclock --systohc
+echo LANG=en_US.UTF-8 > /etc/locale.conf
 export LANG=en_US.UTF-8
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+echo arch-pc > /etc/hostname
+echo -e "\nSuccessfly Uncomment for locale-gen....\n"
 
+time sleep 5
 # ==========================================================================
 #               [Start ::  Configure Accounts]
 # ==========================================================================
@@ -36,11 +75,13 @@ echo -e "\nSuccessfly user created...\n "
 
 echo -e "\nConfigure hostname...\n"
 # Configure hostname and hosts file
-echo "$USER" > /etc/hostname
+
+
+echo "$HostName" > /etc/hostname
 cat << EOF > /etc/hosts
 127.0.0.1   localhost
 ::1     localhost
-127.0.1.1   archpc
+127.0.1.1   $HostName
 EOF
 echo -e "\nHostName successfully Configure...\n"
 
