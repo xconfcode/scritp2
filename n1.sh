@@ -16,6 +16,8 @@ cat <<"EOF"
 EOF
 time sleep 3
 
+echo -e "\nSuccessfully configured Times....\n"
+sudo cfdisk
 
 # ==================================================================================
 # [[ get input ]] 
