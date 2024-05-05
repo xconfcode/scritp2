@@ -29,8 +29,8 @@ echo "Please enter Root(/) paritition: (example /dev/sda3)"
 read ROOT 
 
 
-echo -e "\n changing Permission" 
-sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
+#echo -e "\n changing Permission" 
+#sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 
 # ==================================================================================
 # [[ PARTITIONS ]] 
