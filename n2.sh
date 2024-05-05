@@ -2,7 +2,9 @@
 clear
 
 
-cat <<"EOF"
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
 
 
 ██╗████████╗    ██████╗ ██████╗  ██████╗ 
@@ -11,12 +13,11 @@ cat <<"EOF"
 ██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
 ██║   ██║       ██║     ██║  ██║╚██████╔╝
 ╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
-                                         
-                                                                                                                                                           
-   
-
+                                                                                    
 EOF
-time sleep 5
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 
