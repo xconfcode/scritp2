@@ -31,6 +31,9 @@ passwd
 echo "Please enter your HostName"
 read HostName 
 
+echo "uncomment for profile wheels"
+EDITOR=nano visudo
+
 echo -e "\n Storred succefully\n" 
 time sleep 3
 pacman -Syy archlinux-keyring --needed --noconfirm
