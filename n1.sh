@@ -26,14 +26,6 @@ read SWAP
 echo "Please enter Root(/) paritition: (example /dev/sda3)"
 read ROOT 
 
-echo "Please enter your username"
-read USER 
-
-echo "Please enter your password"
-read PASSWORD 
-
-echo -e "\nEnter root password"  # Newline with echo -e
-passwd
 
 echo -e "\n changing Permission" 
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
