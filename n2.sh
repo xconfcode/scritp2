@@ -36,7 +36,7 @@ EDITOR=nano visudo
 
 echo -e "\n Storred succefully\n" 
 time sleep 3
-pacman -Syy archlinux-keyring --needed --noconfirm
+#pacman -Syy archlinux-keyring --needed --noconfirm
 # ==========================================================================
 #               [Start:: generate lang && Time]
 # ==========================================================================
