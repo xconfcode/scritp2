@@ -32,7 +32,7 @@ echo "Please enter your HostName"
 read HostName 
 
 echo -e "\n Storred succefully\n" 
-time sleep 5
+time sleep 3
 pacman -Syy archlinux-keyring --needed --noconfirm
 # ==========================================================================
 #               [Start:: generate lang && Time]
@@ -45,13 +45,13 @@ ln -sf /usr/share/zoneinfo/America/New_York   /etc/localtime
 clear
 echo -e "\nSuccessfly configure Times....\n"
 
-time sleep 5
+time sleep 3
 
 sudo sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 sudo sed -i 's/^#en_US ISO-8859-1/en_US ISO-8859-1/' /etc/locale.gen
 echo -e "\nSuccessfly Uncomment for locale-gen....\n"
 
-time sleep 5
+time sleep 3
 locale-gen
 hwclock --systohc
 echo LANG=en_US.UTF-8 > /etc/locale.conf
@@ -59,7 +59,7 @@ export LANG=en_US.UTF-8
 echo arch-pc > /etc/hostname
 echo -e "\nSuccessfly Uncomment for locale-gen....\n"
 
-time sleep 5
+time sleep 3
 # ==========================================================================
 #               [Start ::  Configure Accounts]
 # ==========================================================================
