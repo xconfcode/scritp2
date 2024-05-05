@@ -17,12 +17,55 @@ EOF
 # Reset text color
 echo -e "\033[0m"  # Reset to default color
 
+echo -e "\nkey_activation for arch linux....\n"
+pacman-key --init
+pacman-key --populate
+pacman -Syy archlinux-keyring
+
+echo -e "\nSuccessfully archlinux keyring attached....\n"
+time sleep 3
+clear 
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
+
 echo -e "\nSuccessfully configured Times....\n"
 sudo cfdisk
+clear
+time sleep 3 
+echo -e "\033[32m"  # Start green text
 
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 # ==================================================================================
 # [[ get input ]] 
 # ==================================================================================
+
 echo "Please enter EFI paritition: (example /dev/sda1 or /dev/nvme0n1p1)"
 read EFI
 
@@ -44,6 +87,28 @@ passwd
 echo "Please enter your HostName"
 read HostName 
 
+echo -e "\nSuccessfully Store user input....\n"
+time sleep 3
+
+clear 
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
+
 
 #echo -e "\n changing Permission" 
 #sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
@@ -60,6 +125,23 @@ swapon "${SWAP}"
 mkfs.ext4 "${ROOT}"
 echo -e "\nSuccessfully Formatted\n"
 time sleep 3
+clear
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 # ==================================================================================
 # [[ Mounting ]] 
@@ -70,6 +152,24 @@ mkdir /boot/efi
 mount  "${EFI}" /boot/efi
 echo -e "\nSuccessfully Mounted\n"
 time sleep 3
+
+clear 
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 # ==========================================================================
 #   [ Kernal base package]
@@ -82,6 +182,24 @@ pacstrap -K /mnt base linux linux-firmware sudo nano
 echo "Installed successsfly  Base system into Linux kernal !!!!"
 time sleep 3
 
+clear
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
+
 # ==========================================================================
 #               [Storing Mount]
 # ==========================================================================
@@ -91,6 +209,24 @@ echo " Storring mount"
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "Successfly storred all mount"
 time sleep 3
+
+clear
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 # ==========================================================================
 
@@ -138,6 +274,25 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers.tm
 echo -e "\n Storred succefully\n" 
 time sleep 3
 #pacman -Syy archlinux-keyring --needed --noconfirm
+clear
+
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 # ==========================================================================
 #               [Start:: generate lang && Time]
 # ==========================================================================
@@ -151,12 +306,49 @@ echo -e "\nSuccessfly configure Times....\n"
 
 time sleep 3
 clear
+clear
+
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 sudo sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 sudo sed -i 's/^#en_US ISO-8859-1/en_US ISO-8859-1/' /etc/locale.gen
 echo -e "\nSuccessfly Uncomment for locale-gen....\n"
 
 time sleep 3
 clear
+
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 locale-gen
 hwclock --systohc
 echo LANG=en_US.UTF-8 > /etc/locale.conf
@@ -166,6 +358,25 @@ echo -e "\nSuccessfly Uncomment for locale-gen....\n"
 
 time sleep 3
 clear
+clear
+
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 # ==========================================================================
 #               [Start ::  Configure Accounts]
 # ==========================================================================
@@ -174,6 +385,25 @@ useradd -m -s /bin/bash "$USER"
 echo "$USER:$PASSWORD" | chpasswd
 usermod -aG wheel "$USER"
 echo -e "\nSuccessfly user created...\n "
+clear
+
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 # ==========================================================================
 #               [End :: Configure Accounts]
 # ==========================================================================
@@ -181,6 +411,25 @@ echo -e "\nSuccessfly user created...\n "
 #               [Start:: Hostname]
 # ==========================================================================
 clear
+clear
+
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 echo -e "\nConfigure hostname...\n"
 # Configure hostname and hosts file
 
@@ -196,6 +445,25 @@ echo -e "\nHostName successfully Configure...\n"
 
 time sleep 3
 clear
+clear
+
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 # ==========================================================================
 #               [Installing GRUB && Depandency]
 # ==========================================================================
@@ -209,6 +477,26 @@ echo -e "\nSuccessfly installed grub & dependancy....\n"
 time sleep 3
 clear
 
+clear
+
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
+
 
 echo "Creating boot directory"
 mkdir /boot/efi
@@ -216,7 +504,25 @@ mount  /dev/sda1 /boot/efi
 echo "Successfly Mounted & created /boot/efi directory !!!!"
 time sleep 3
 clear
+clear
 
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 #  installing grub and dependency by pacman
 echo "installing grub and dependancy"
@@ -225,6 +531,26 @@ time sleep 3
 # ==========================================================================
 #               [ GRUB]
 # ==========================================================================
+clear
+
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
+
 
 # Bootloader installation (UEFI systems)
 echo -e "\n install by grub...\n"
@@ -234,6 +560,26 @@ echo -e "\nggrub install bootloader !!!!....\n"
 
 time sleep 3
 clear
+clear
+
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
+
 
 echo -e "\nget grub confinguration...\n"
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -241,6 +587,26 @@ echo -e "\ngrub take configuration !!!!....\n"
 
 time sleep 3
 clear
+clear
+
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
+
 
 
 pacman -S nvidia nvidia-utils --needed --noconfirm
@@ -252,7 +618,25 @@ clear
 # ==========================================================================
 #               [Enabling Syetems]
 # ==========================================================================
+clear
 
+
+echo -e "\033[32m"  # Start green text
+
+cat <<EOF
+
+
+██╗████████╗    ██████╗ ██████╗  ██████╗ 
+██║╚══██╔══╝    ██╔══██╗██╔══██╗██╔═══██╗
+██║   ██║       ██████╔╝██████╔╝██║   ██║
+██║   ██║       ██╔═══╝ ██╔══██╗██║   ██║
+██║   ██║       ██║     ██║  ██║╚██████╔╝
+╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ 
+                                                                                    
+EOF
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 # Enable essential services
 systemctl enable NetworkManager bluetooth cups sshd
 
@@ -280,5 +664,7 @@ arch-chroot /mnt /bin/bash /n2.sh
 time sleep 3
 
 # Reboot message
-echo "Installation complete. Reboot using 'reboot'"
+'"
+echo -e "\nInstallation complete. Reboot using 'reboot' !!!!....\n"
+echo -e "\nDont forget typr umount -R /mnt.....!!!!....\n"
 time sleep 3
