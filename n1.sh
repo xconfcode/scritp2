@@ -37,10 +37,10 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 # make filesystems
 echo -e "\nCreating Filesystems...\n"
 echo -e "\nFormatting Desks\n"
-mkfs.fat -F32 -n "EFISYSTEM" "${EFI}"
+mkfs.fat -F32 "${EFI}"
 mkswap "${SWAP}"
 swapon "${SWAP}"
-mkfs.ext4 -L "ROOT" "${ROOT}"
+mkfs.ext4 "${ROOT}"
 echo -e "\nSuccessfully Formatted\n"
 
 # ==================================================================================
