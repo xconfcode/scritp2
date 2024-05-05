@@ -664,6 +664,8 @@ echo -e "\nenabled cups !!!!....\n"
 echo -e "\nenabled sshd !!!!....\n"
 
 echo -e "\nAll system enabled !!!!....\n"
+echo -e "\nInstallation complete. Reboot using 'reboot' !!!!....\n"
+echo -e "\nDont forget typr umount -R /mnt.....!!!!....\n"
 
 time sleep 3
 EOF
