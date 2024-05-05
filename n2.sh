@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 clear
+echo -e "\nSuccessfly configure Times....\n"
 
+cfdisk
 
 cat <<"EOF"
 
