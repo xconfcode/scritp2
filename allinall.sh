@@ -267,17 +267,15 @@ echo -e "\033[0m"  # Reset to default color
 
 
 echo "uncomment for profile wheels"
-# EDITOR=nano visudo
+# 
 echo -e "\n changing Permission" 
-read -r -p "Need to uncomment ^# %wheel ALL=(ALL:ALL)  ok ? [y/N] " response
-if [[ ! $response =~ ^([Yy]$) ]]; then
-  sudo sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers.tmp
-  echo -e "\nUncommented s/^# %wheel ALL=(ALL:ALL) successfully \n"
-  time sleep 5 
-  echo -e "\nCheck if Uncommented s/^# %wheel ALL=(ALL:ALL) successfully \n"
-  time sleep 3
-  visudo
-fi
+sudo sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers.tmp
+echo -e "\nUncommented s/^# %wheel ALL=(ALL:ALL) successfully \n"
+time sleep 5 
+echo -e "\nCheck if Uncommented s/^# %wheel ALL=(ALL:ALL) successfully \n"
+time sleep 3
+EDITOR=nano visudo 
+
 
 
 
