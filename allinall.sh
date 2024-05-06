@@ -20,7 +20,7 @@ echo -e "\033[0m"  # Reset to default color
 echo -e "\nkey_activation for arch linux....\n"
 pacman-key --init
 pacman-key --populate
-pacman -Syy archlinux-keyring --needed --noconfirm
+pacman -Syy archlinux-keyring --noconfirm
 
 echo -e "\nSuccessfully archlinux keyring attached....\n"
 time sleep 3
