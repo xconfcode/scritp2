@@ -119,10 +119,10 @@ echo -e "\033[0m"  # Reset to default color
 # make filesystems
 echo -e "\nCreating Filesystems...\n"
 echo -e "\nFormatting Desks\n"
-mkfs.fat -F32 "${EFI}"
-mkswap "${SWAP}"
-swapon "${SWAP}"
-mkfs.ext4 "${ROOT}"
+mkfs.fat -F32 /dev/"${EFI}"
+mkswap /dev/"${SWAP}"
+swapon /dev/"${SWAP}"
+mkfs.ext4 /dev/"${ROOT}"
 echo -e "\nSuccessfully Formatted\n"
 time sleep 3
 clear
@@ -147,9 +147,9 @@ echo -e "\033[0m"  # Reset to default color
 # [[ Mounting ]] 
 # ==================================================================================
 echo -e "\nstarted Mounting\n"
-mount  "${ROOT}" /mnt
+mount  /dev/"${ROOT}" /mnt
 mkdir /boot/efi
-mount  "${EFI}" /boot/efi
+mount  /dev/"${EFI}" /boot/efi
 echo -e "\nSuccessfully Mounted\n"
 time sleep 3
 
@@ -271,10 +271,15 @@ echo "uncomment for profile wheels"
 echo -e "\n changing Permission" 
 read -r -p "Need to uncomment ^# %wheel ALL=(ALL:ALL)  ok ? [y/N] " response
 if [[ ! $response =~ ^([Yy]$) ]]; then
-  exit 0
+  sudo sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers.tmp
+  echo -e "\nUncommented s/^# %wheel ALL=(ALL:ALL) successfully \n"
+  time sleep 5 
+  echo -e "\nCheck if Uncommented s/^# %wheel ALL=(ALL:ALL) successfully \n"
+  time sleep 3
+  visudo
 fi
 
-visudo
+
 
 
 
