@@ -271,14 +271,10 @@ echo "uncomment for profile wheels"
 echo -e "\n changing Permission" 
 read -r -p "Need to uncomment ^# %wheel ALL=(ALL:ALL)  ok ? [y/N] " response
 if [[ ! $response =~ ^([Yy]$) ]]; then
-visudo
-  exit 0
-  else if [[ ! $response =~ ^([Nn]$) ]];
-  sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers.tmp
   exit 0
 fi
 
-
+visudo
 
 
 
