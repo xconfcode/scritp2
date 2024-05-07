@@ -269,7 +269,7 @@ echo -e "\033[0m"  # Reset to default color
 echo "uncomment for profile wheels"
 # 
 echo -e "\n changing Permission" 
-sudo sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/ %wheel ALL=(ALL:ALL) ALL/' /etc/sudoers.tmp
+sudo sed -i 's/^"# %wheel ALL=(ALL:ALL) ALL"/ "%wheel ALL=(ALL:ALL) ALL"' /etc/sudoers.tmp
 echo -e "\nUncommented s/^# %wheel ALL=(ALL:ALL) successfully \n"
 time sleep 5 
 echo -e "\nCheck if Uncommented s/^# %wheel ALL=(ALL:ALL) successfully \n"
