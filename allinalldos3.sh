@@ -155,10 +155,10 @@ pacman-key --init
 echo -e "\nupdating keys....\n"
 pacman-key --populate
 
-echo -e "\nInstalling keys....\n"
+echo -e "\Installing keys....\n"
 pacman -Syy archlinux-keyring --needed --noconfirm
 
-echo -e "\nSuccessfully archlinux keyring attached....!!!!!\n"
+echo -e "\Successfully archlinux keyring attached....!!!!!\n"
 
 time sleep 3
 
