@@ -152,7 +152,18 @@ echo "$header1"
 
 echo -e "\nkey_activation for arch linux....\n"
 
-pacman-key --init && pacman-key --populate && pacman -Syy archlinux-keyring --needed --noconfirm
+pacman-key --init
+echo -e "\nupdating keys....\n"
+pacman-key --populate
+
+clear 
+echo -e "\033[32m"  # Start green text
+echo "$header1"
+
+
+echo -e "\nInstalling keys....\n"
+pacman -Syy archlinux-keyring --needed --noconfirm
+
 
 echo -e "\Successfully archlinux keyring attached....!!!!!\n"
 
