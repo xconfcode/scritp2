@@ -21,21 +21,18 @@ header1="
 header2="
 ====================================================================================================================================================
 
-[[ 2. USER-INPUT ]] 
-
-====================================================================================================================================================
-"
-
-
-header3="
-====================================================================================================================================================
-
 [[ 3. CREATE-PARTITIONS ]] 
 
 ====================================================================================================================================================
 "
 
+header3="
+====================================================================================================================================================
 
+[[ 2. USER-INPUT ]] 
+
+====================================================================================================================================================
+"
 
 header4="
 ====================================================================================================================================================
@@ -150,20 +147,10 @@ header16="
 # ==================================================================================
 
 clear 
+
 echo -e "\033[32m"  # Start green text
 echo "$header1"
-
- 
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
-
-
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
-
+echo
 echo -e "\nkey_activation for arch linux....\n"
 pacman-key --init
 pacman-key --populate
@@ -175,61 +162,11 @@ clear
 echo -e "\033[32m"  # Start green text
 
 # ==================================================================================
-# [[ 2. USER-INPUT ]] 
+# [[ 2. CREATE-PARTITIONS ]] 
 # ==================================================================================
 clear 
 echo -e "\033[32m"  # Start green text
-echo "$header2"
-echo
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
-
-
-
-
-
-echo "Please enter EFI paritition: (example /dev/sda1 or /dev/nvme0n1p1)"
-read EFI
-
-echo "Please enter SWAP paritition: (example /dev/sda2)"
-read SWAP
-
-echo "Please enter Root(/) paritition: (example /dev/sda3)"
-read ROOT 
-
-echo "Please enter your username"
-read USER 
-
-echo "Please enter your password"
-read PASSWORD 
-
-
-
-echo "Please enter your HostName"
-read HostName 
-
-echo -e "\nSuccessfully Store user input....\n"
-time sleep 3
-
-clear 
-
-echo -e "\033[32m"  # Start green text
-
-
-
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
-
-
-# ==================================================================================
-# [[ 3. CREATE-PARTITIONS ]] 
-# ==================================================================================
-clear 
-echo -e "\033[32m"  # Start green text
-echo "$header3" 
+echo "$header2" 
 
 echo "Press Enter to continue..."
 read -r
@@ -257,6 +194,43 @@ echo -e "\033[0m"  # Reset to default color
 
 
 # ==================================================================================
+# [[ 3. USER-INPUT ]] 
+# ==================================================================================
+clear 
+echo -e "\033[32m"  # Start green text
+echo "$header3"
+echo
+
+
+echo "Please enter EFI paritition: (example /dev/sda1 or /dev/nvme0n1p1)"
+read EFI
+
+echo "Please enter SWAP paritition: (example /dev/sda2)"
+read SWAP
+
+echo "Please enter Root(/) paritition: (example /dev/sda3)"
+read ROOT 
+
+echo "Please enter your username"
+read USER 
+
+echo "Please enter your password"
+read PASSWORD 
+
+
+echo "Please enter your HostName"
+read HostName 
+
+echo -e "\nSuccessfully Store user input....\n"
+time sleep 3
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
+
+clear 
+
+
+
+# ==================================================================================
 # [[  4. FORMAT-PARTITIONS ]] 
 # ==================================================================================
 # make filesystems
@@ -269,8 +243,6 @@ read -r
 echo "Continuing..."
 # Reset text color
 echo -e "\033[0m"  # Reset to default color
-
-
 
 echo -e "\nCreating Filesystems...\n"
 echo -e "\nFormatting Desks\n"
@@ -345,18 +317,13 @@ echo -e "\033[32m"  # Start green text
 
 echo "$header7" 
 
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
-
 
 # Generate Mount
 echo " Storring mount"
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "Successfly storred all mount"
 time sleep 3
+echo -e "\033[0m"  # Reset to default color
 
 clear
 
@@ -370,10 +337,7 @@ echo -e "\033[32m"  # Start green text
 
 echo "$header8" 
 
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
+
 echo -e "\033[0m"  # Reset to default color
 
 
@@ -389,10 +353,7 @@ echo -e "\033[32m"  # Start green text
 
 echo "$header9" 
 
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
+
 echo -e "\033[0m"  # Reset to default color
 
 
@@ -410,16 +371,6 @@ clear
 echo -e "\033[32m"  # Start green text
 
 echo "$header10" 
-
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
-
-
-
-
 
 
 echo "uncomment for profile wheels"
@@ -441,15 +392,11 @@ EDITOR=nano visudo
 echo -e "\n Storred succefully\n" 
 time sleep 3
 #pacman -Syy archlinux-keyring --needed --noconfirm
+
+echo -e "\033[0m"  # Reset to default color
 clear
 
 
-echo -e "\033[32m"  # Start green text
-
-
-
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
 # ==========================================================================
 #  [[ 11. GENERATE-LANG-AND-TIME ]] 
 # ==========================================================================
@@ -462,11 +409,7 @@ echo -e "\033[32m"  # Start green text
 echo "$header11" 
 
 
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 
 
 
@@ -526,14 +469,6 @@ clear
 echo -e "\033[32m"  # Start green text
 echo "$header12" 
 
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
-
-
-
 
 echo -e "\nEnter root password"  # Newline with echo -e
 passwd
@@ -542,17 +477,12 @@ useradd -m -s /bin/bash "$USER"
 echo "$USER:$PASSWORD" | chpasswd
 usermod -aG wheel "$USER"
 echo -e "\nSuccessfly user created...\n "
-clear
-
-
-echo -e "\033[32m"  # Start green text
-
 
 
 # Reset text color
 echo -e "\033[0m"  # Reset to default color
 
-
+clear
 
 # ==========================================================================
 # [[ 13. HOST-CONFIG ]] 
@@ -562,13 +492,6 @@ echo -e "\033[32m"  # Start green text
 echo "$header13" 
 
 
-
-
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
 
 
 
@@ -589,13 +512,11 @@ echo -e "\nHostName successfully Configure...\n"
 
 
 time sleep 3
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 clear
 
 
-
-
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
 # ==========================================================================
 # [[ 14. INSTALL-GRUB-AND-DEPENDANCY ]] 
 # ==========================================================================
@@ -603,13 +524,6 @@ echo -e "\033[0m"  # Reset to default color
 echo -e "\033[32m"  # Start green text
 
 echo "$header14" 
-
-
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
 
 
 #  Create boot dir and mount in it
@@ -621,12 +535,7 @@ echo -e "\nSuccessfly installed grub & dependancy....\n"
 time sleep 3
 clear
 
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
 echo -e "\033[0m"  # Reset to default color
-
 
 echo "Creating boot directory"
 mkdir /boot/efi
@@ -634,20 +543,15 @@ mount  /dev/sda1 /boot/efi
 echo "Successfly Mounted & created /boot/efi directory !!!!"
 time sleep 3
 clear
-clear
 
 
-echo -e "\033[32m"  # Start green text
-
-
-
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
 
 #  installing grub and dependency by pacman
 echo "installing grub and dependancy"
 time sleep 3
 
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 # ==========================================================================
 #  [[ 15. INSTALL-GRUB-BOOTLOADER ]] 
 # ==========================================================================
@@ -657,13 +561,6 @@ clear
 echo -e "\033[32m"  # Start green text
 
 echo "$header15" 
-
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
-
 
 
 # Reset text color
@@ -678,7 +575,7 @@ echo -e "\nggrub install bootloader !!!!....\n"
 
 time sleep 3
 clear
-clear
+
 
 
 echo -e "\033[32m"  # Start green text
@@ -695,25 +592,21 @@ echo -e "\ngrub take configuration !!!!....\n"
 
 time sleep 3
 clear
-clear
 
+
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 
 # ==========================================================================
 #  [[ 15. INSTALL-GRAPHIC ]] 
 # ==========================================================================
+clear
+
 echo -e "\033[32m"  # Start green text
 echo -e "\033[32m"  # Start green text
 echo "$header15"
-
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
-
-
 
 # Reset text color
 echo -e "\033[0m"  # Reset to default color
@@ -722,6 +615,7 @@ echo -e "\ninstalled video driver !!!!....\n"
 
 time sleep 3
 clear
+echo -e "\033[0m"  # Reset to default color
 
 # ==========================================================================
 # [[ 16. ENABLING-SYSTEMES ]] 
@@ -730,20 +624,6 @@ clear
 echo -e "\033[32m"  # Start green text
 echo "$header16"
 
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
-
-
-
-
-
-
-
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
 # Enable essential services
 systemctl enable NetworkManager bluetooth cups sshd
 
@@ -758,6 +638,8 @@ echo -e "\nInstallation complete. Reboot using 'reboot' !!!!....\n"
 echo -e "\nDont forget typr umount -R /mnt.....!!!!....\n"
 
 time sleep 3
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 EOF
 
 REALEND
