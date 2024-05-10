@@ -80,9 +80,6 @@ read USER
 echo "Please enter your password"
 read PASSWORD 
 
-echo -e "\nEnter root password"  # Newline with echo -e
-passwd
-
 echo "Please enter your HostName"
 read HostName 
 
@@ -407,6 +404,10 @@ echo -e "\033[0m"  # Reset to default color
 #               [Start ::  Configure Accounts]
 # ==========================================================================
 echo -e "\nstart creating user...\n"
+
+echo -e "\nEnter root password"  # Newline with echo -e
+passwd
+
 useradd -m -s /bin/bash "$USER"
 echo "$USER:$PASSWORD" | chpasswd
 usermod -aG wheel "$USER"
