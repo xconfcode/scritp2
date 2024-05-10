@@ -178,8 +178,6 @@ echo -e "\033[32m"  # Start green text
 echo "$header2" 
 
 
-
-
 echo -e "\nCheck and configured Partiion....\n"
 sudo cfdisk
 clear
