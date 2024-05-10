@@ -66,13 +66,12 @@ echo -e "\033[0m"  # Reset to default color
 # [[ get input ]] 
 # ==================================================================================
 
-#echo "Please enter EFI paritition: (example /dev/sda1 or /dev/nvme0n1p1)"
-#read EFI
 
-echo "Please enter SWAP paritition: (example /dev/sda1)"
+
+echo "Please enter SWAP paritition: (example /dev/sda2)"
 read SWAP
 
-echo "Please enter Root(/) paritition: (example /dev/sda2)"
+echo "Please enter Root(/) paritition: (example /dev/sda3)"
 read ROOT 
 
 echo "Please enter your username"
@@ -81,7 +80,8 @@ read USER
 echo "Please enter your password"
 read PASSWORD 
 
-
+echo -e "\nEnter root password"  # Newline with echo -e
+passwd
 
 echo "Please enter your HostName"
 read HostName 
@@ -118,7 +118,7 @@ echo -e "\033[0m"  # Reset to default color
 # make filesystems
 echo -e "\nCreating Filesystems...\n"
 echo -e "\nFormatting Desks\n"
-#mkfs.fat -F32 /dev/"${EFI}"
+mkfs.fat -F32 /dev/"${EFI}"
 mkswap /dev/"${SWAP}"
 swapon /dev/"${SWAP}"
 mkfs.ext4 /dev/"${ROOT}"
@@ -147,8 +147,8 @@ echo -e "\033[0m"  # Reset to default color
 # ==================================================================================
 echo -e "\nstarted Mounting\n"
 mount  /dev/"${ROOT}" /mnt
-#mkdir /boot/efi
-#mount  /dev/"${EFI}" /boot/efi
+mkdir /boot/efi
+mount  /dev/"${EFI}" /boot/efi
 echo -e "\nSuccessfully Mounted\n"
 time sleep 3
 
@@ -208,8 +208,7 @@ echo " Storring mount"
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "Successfly storred all mount"
 time sleep 3
-cat /mnt/etc/fstab
-time sleep 6
+
 clear
 echo -e "\033[32m"  # Start green text
 
@@ -266,6 +265,15 @@ echo -e "\033[0m"  # Reset to default color
 
 
 
+echo "uncomment for profile wheels"
+# 
+echo -e "\n changing Permission" 
+sudo sed -i 's/^"# %wheel ALL=(ALL:ALL) ALL"/ "%wheel ALL=(ALL:ALL) ALL"' /etc/sudoers.tmp
+echo -e "\nUncommented s/^# %wheel ALL=(ALL:ALL) successfully \n"
+time sleep 5 
+echo -e "\nCheck if Uncommented s/^# %wheel ALL=(ALL:ALL) successfully \n"
+time sleep 3
+EDITOR=nano visudo 
 
 
 
@@ -398,24 +406,12 @@ echo -e "\033[0m"  # Reset to default color
 # ==========================================================================
 #               [Start ::  Configure Accounts]
 # ==========================================================================
-echo -e "\nEnter root password"  # Newline with echo -e
-passwd
 echo -e "\nstart creating user...\n"
 useradd -m -s /bin/bash "$USER"
 echo "$USER:$PASSWORD" | chpasswd
 usermod -aG wheel "$USER"
 echo -e "\nSuccessfly user created...\n "
 clear
-
-echo "uncomment for profile wheels"
-# 
-echo -e "\n changing Permission" 
-sudo sed -i 's/^"# %wheel ALL=(ALL:ALL) ALL"/ "%wheel ALL=(ALL:ALL) ALL"' /etc/sudoers.tmp
-echo -e "\nUncommented s/^# %wheel ALL=(ALL:ALL) successfully \n"
-time sleep 5 
-echo -e "\nCheck if Uncommented s/^# %wheel ALL=(ALL:ALL) successfully \n"
-time sleep 3
-EDITOR=nano visudo 
 
 
 echo -e "\033[32m"  # Start green text
@@ -528,10 +524,10 @@ EOF
 echo -e "\033[0m"  # Reset to default color
 
 
-#echo "Creating boot directory"
-#mkdir /boot/efi
-#mount  /dev/sda1 /boot/efi
-#echo "Successfly Mounted & created /boot/efi directory !!!!"
+echo "Creating boot directory"
+mkdir /boot/efi
+mount  /dev/sda1 /boot/efi
+echo "Successfly Mounted & created /boot/efi directory !!!!"
 time sleep 3
 clear
 clear
