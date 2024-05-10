@@ -66,7 +66,8 @@ echo -e "\033[0m"  # Reset to default color
 # [[ get input ]] 
 # ==================================================================================
 
-
+echo "Please enter EFI paritition: (example /dev/sda1 or /dev/nvme0n1p1)"
+read EFI
 
 echo "Please enter SWAP paritition: (example /dev/sda2)"
 read SWAP
