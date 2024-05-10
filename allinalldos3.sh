@@ -149,13 +149,18 @@ header16="
 clear 
 echo -e "\033[32m"  # Start green text
 echo "$header1"
+
 echo -e "\nkey_activation for arch linux....\n"
-echo -e "\nSuccessfly installed grub & dependancy....\n"
+
 pacman-key --init
 echo -e "\nupdating keys....\n"
 pacman-key --populate
 
+clear 
 echo -e "\033[32m"  # Start green text
+echo "$header1"
+
+
 echo -e "\nInstalling keys....\n"
 pacman -Syy archlinux-keyring --needed --noconfirm
 
