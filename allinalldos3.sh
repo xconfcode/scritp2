@@ -159,8 +159,7 @@ pacman -Syy archlinux-keyring --noconfirm
 echo -e "\nSuccessfully archlinux keyring attached....\n"
 echo -e "\033[0m\nSuccessfully archlinux keyring attached....\n"
 time sleep 3
-clear 
-echo -e "\033[32m"  # Start green text
+
 
 # ==================================================================================
 # [[ 2. CREATE-PARTITIONS ]] 
@@ -170,19 +169,17 @@ echo -e "\033[32m"  # Start green text
 echo "$header2" 
 
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 
 echo -e "\nCheck and configured Partiion....\n"
 sudo cfdisk
 clear
 time sleep 3 
-echo -e "\033[32m"  # Start green text
 
 
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
+
 
 
 
@@ -217,8 +214,7 @@ read HostName
 
 echo -e "\nSuccessfully Store user input....\n"
 time sleep 3
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 
 clear 
 
@@ -283,12 +279,11 @@ echo "Installed successsfly  Base system into Linux kernal !!!!"
 time sleep 3
 
 clear
-echo -e "\033[32m"  # Start green text
 
 
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
+
 
 # ==========================================================================
 # [[ 7. STORING-MOUNT]]       
@@ -303,7 +298,6 @@ echo " Storring mount"
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "Successfly storred all mount"
 time sleep 3
-echo -e "\033[0m"  # Reset to default color
 
 clear
 
@@ -318,7 +312,6 @@ echo -e "\033[32m"  # Start green text
 echo "$header8" 
 
 
-echo -e "\033[0m"  # Reset to default color
 
 
 echo "copy arch-chroot scripts"
@@ -334,7 +327,6 @@ echo -e "\033[32m"  # Start green text
 echo "$header9" 
 
 
-echo -e "\033[0m"  # Reset to default color
 
 
 
@@ -373,7 +365,6 @@ echo -e "\n Storred succefully\n"
 time sleep 3
 #pacman -Syy archlinux-keyring --needed --noconfirm
 
-echo -e "\033[0m"  # Reset to default color
 clear
 
 
@@ -389,14 +380,6 @@ echo -e "\033[32m"  # Start green text
 echo "$header11" 
 
 
-
-
-
-
-
-
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
 echo -e "\nSetting Times...\n"
 ln -sf /usr/share/zoneinfo/America/New_York   /etc/localtime
 clear
@@ -404,15 +387,14 @@ echo -e "\nSuccessfly configure Times....\n"
 
 time sleep 3
 clear
-clear
+
 
 
 echo -e "\033[32m"  # Start green text
 
 
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 sudo sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 sudo sed -i 's/^#en_US ISO-8859-1/en_US ISO-8859-1/' /etc/locale.gen
 echo -e "\nSuccessfly Uncomment for locale-gen....\n"
@@ -425,8 +407,7 @@ echo -e "\033[32m"  # Start green text
 
 
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 locale-gen
 hwclock --systohc
 echo LANG=en_US.UTF-8 > /etc/locale.conf
@@ -440,8 +421,7 @@ clear
 
 
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 # ==========================================================================
 # [[ 12. CREATE-USER ]] 
 # ==========================================================================
@@ -459,8 +439,7 @@ usermod -aG wheel "$USER"
 echo -e "\nSuccessfly user created...\n "
 
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 
 clear
 
@@ -476,8 +455,7 @@ echo "$header13"
 
 
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 echo -e "\nConfigure hostname...\n"
 # Configure hostname and hosts file
 
@@ -492,8 +470,7 @@ echo -e "\nHostName successfully Configure...\n"
 
 
 time sleep 3
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 clear
 
 
@@ -515,7 +492,6 @@ echo -e "\nSuccessfly installed grub & dependancy....\n"
 time sleep 3
 clear
 
-echo -e "\033[0m"  # Reset to default color
 
 echo "Creating boot directory"
 mkdir /boot/efi
@@ -530,8 +506,7 @@ clear
 echo "installing grub and dependancy"
 time sleep 3
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 # ==========================================================================
 #  [[ 15. INSTALL-GRUB-BOOTLOADER ]] 
 # ==========================================================================
@@ -543,8 +518,7 @@ echo -e "\033[32m"  # Start green text
 echo "$header15" 
 
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 
 
 # Bootloader installation (UEFI systems)
@@ -562,8 +536,7 @@ echo -e "\033[32m"  # Start green text
 
 
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 
 
 echo -e "\nget grub confinguration...\n"
@@ -574,8 +547,7 @@ time sleep 3
 clear
 
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 
 
 
@@ -584,18 +556,16 @@ echo -e "\033[0m"  # Reset to default color
 # ==========================================================================
 clear
 
-echo -e "\033[32m"  # Start green text
+
 echo -e "\033[32m"  # Start green text
 echo "$header15"
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 pacman -S nvidia nvidia-utils  xf86-video-intel --needed --noconfirm
 echo -e "\ninstalled video driver !!!!....\n"
 
 time sleep 3
 clear
-echo -e "\033[0m"  # Reset to default color
 
 # ==========================================================================
 # [[ 16. ENABLING-SYSTEMES ]] 
@@ -618,8 +588,7 @@ echo -e "\nInstallation complete. Reboot using 'reboot' !!!!....\n"
 echo -e "\nDont forget typr umount -R /mnt.....!!!!....\n"
 
 time sleep 3
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 EOF
 
 REALEND
@@ -628,6 +597,7 @@ REALEND
 # END-CHROOT
 # =========================================
 # Chroot and execute configuration script
+echo -e "\033[32m"  # Start green text
 chmod +x  /mnt/n2.sh
 echo -e "\narch-chroot scipt excuteded successfully !!!!....\n"
 time sleep 3
