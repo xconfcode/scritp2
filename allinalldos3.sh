@@ -282,12 +282,19 @@ echo -e "\033[32m"  # Start green text
 echo "$header5" 
 
 
-
+echo -e "\033[32m"  # Start green text
 echo -e "\nInstalling Base system into Linux kernal ...\n"
+
+echo -e "\033[32m"  # Start green text
 # Install base system (remove --noconfirm for manual confirmation)
+
+echo -e "\033[32m"  # Start green text
 echo -e "\nInstalling Arch Linux base...\n"
+
+echo -e "\033[32m"  # Start green text
 pacstrap -K /mnt base linux linux-firmware sudo nano
- 
+
+ echo -e "\033[32m"  # Start green text
 echo "Installed successsfly  Base system into Linux kernal !!!!"
 time sleep 3
 
