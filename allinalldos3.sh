@@ -159,14 +159,13 @@ pacman-key --populate
 clear 
 echo -e "\033[32m"  # Start green text
 echo "$header1"
-echo -e "\033[32m"  # Start green text
 echo -e "================================================="
 echo
 echo -e "\nInstalling keys....\n"
 echo
 pacman -Syy archlinux-keyring --needed --noconfirm 
 
-echo -e "\033[32m"  # Start green text
+
 echo -e "================================================="
 echo
 echo -e "\033[32m"  # Start green text
