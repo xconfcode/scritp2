@@ -154,7 +154,7 @@ pacman-key --init
 pacman-key --populate
 pacman -Syy archlinux-keyring --noconfirm
 
-echo -e "Successfully archlinux keyring attached...."
+echo -e "Successfully archlinux keyring attached....!!!!!"
 
 time sleep 3
 
