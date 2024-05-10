@@ -165,6 +165,7 @@ echo
 echo -e "\nInstalling keys....\n"
 echo
 pacman -Syy archlinux-keyring --needed --noconfirm 
+echo -e "\033[32m"  # Start green text
 echo -e "================================================="
 echo
 echo -e "\nSuccessfully archlinux keyring attached....!!!!!\n"
