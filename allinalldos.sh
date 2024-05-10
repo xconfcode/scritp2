@@ -689,3 +689,14 @@ EOF
 
 REALEND
 
+# =========================================
+# END-CHROOT
+# =========================================
+# Chroot and execute configuration script
+chmod +x  /mnt/n2.sh
+echo -e "\narch-chroot scipt excuteded successfully !!!!....\n"
+time sleep 3
+arch-chroot /mnt /bin/bash /n2.sh
+time sleep 3
+
+
