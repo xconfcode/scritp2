@@ -159,6 +159,7 @@ pacman-key --populate
 echo -e "\033[32m"  # Start green text
 pacman -Syy archlinux-keyring --noconfirm
 
+
 echo -e "\033[32m"  # Start green text
 echo -e "Successfully archlinux keyring attached...."
 
