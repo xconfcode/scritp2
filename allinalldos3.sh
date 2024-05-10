@@ -157,6 +157,7 @@ pacman-key --populate
 pacman -Syy archlinux-keyring --noconfirm
 
 echo -e "\nSuccessfully archlinux keyring attached....\n"
+echo -e "\033[0m\nSuccessfully archlinux keyring attached....\n"
 time sleep 3
 clear 
 echo -e "\033[32m"  # Start green text
@@ -231,11 +232,7 @@ clear
 echo -e "\033[32m"  # Start green text
 echo "$header4" 
 
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
+
 
 echo -e "\nCreating Filesystems...\n"
 echo -e "\nFormatting Desks\n"
@@ -257,11 +254,6 @@ echo -e "\033[32m"  # Start green text
 
 echo "$header5" 
 
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
 
 echo -e "\nstarted Mounting\n"
 mount  /dev/"${ROOT}" /mnt
@@ -280,11 +272,6 @@ echo -e "\033[32m"  # Start green text
 
 echo "$header5" 
 
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
 
 
 echo -e "\nInstalling Base system into Linux kernal ...\n"
