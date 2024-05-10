@@ -435,8 +435,8 @@ echo -e "\nEnter root password"  # Newline with echo -e
 passwd
 echo -e "\nstart creating user...\n"
 useradd -m -s /bin/bash "$USER"
+useradd -m -G wheel "$USER"
 echo "$USER:$PASSWORD" | chpasswd
-usermod -aG wheel "$USER"
 echo -e "\nSuccessfly user created...\n "
 
 
@@ -487,7 +487,9 @@ echo "$header14"
 #  Create boot dir and mount in it
 
 echo -e "\nInstalling grub and dependencies...\n"
-pacman -S grub efibootmgr os-prober mtools networkmanager network-manager-applet wpa_supplicant dialog base-devel linux-headers  cups openssh blueman git intel-ucode nano vim neovim   --noconfirm
+# pacman -S grub efibootmgr os-prober mtools networkmanager network-manager-applet wpa_supplicant dialog base-devel linux-headers  cups openssh blueman git intel-ucode nano vim neovim   --noconfirm
+
+pacman -S grub efibootmgr os-prober mtools --noconfirm
 echo -e "\nSuccessfly installed grub & dependancy....\n"
 
 time sleep 3
@@ -576,7 +578,9 @@ echo -e "\033[32m"  # Start green text
 echo "$header16"
 
 # Enable essential services
-systemctl enable NetworkManager bluetooth cups sshd
+systemctl enable NetworkManager 
+
+# bluetooth cups sshd
 
 clear 
 echo -e "\nenabled NetworkManager !!!!....\n"
