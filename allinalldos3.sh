@@ -165,7 +165,7 @@ echo -e "\nInstalling keys....\n"
 pacman -Syy archlinux-keyring --needed --noconfirm
 
 
-echo -e "\Successfully archlinux keyring attached....!!!!!\n"
+echo -e "Successfully archlinux keyring attached....!!!!!"
 
 time sleep 3
 
