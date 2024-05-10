@@ -160,12 +160,16 @@ clear
 echo -e "\033[32m"  # Start green text
 echo "$header1"
 
-
+echo -e "================================================="
+echo
 echo -e "\nInstalling keys....\n"
-pacman -Syy archlinux-keyring --needed --noconfirm
-
-
-echo -e "Successfully archlinux keyring attached....!!!!!"
+echo
+pacman -Syy archlinux-keyring --needed --noconfirm && echo -e "\e[32mSuccess! archlinux-keyring is updated.\e[0m"
+echo -e "================================================="
+echo
+echo -e "\nSuccessfully archlinux keyring attached....!!!!!\n"
+echo
+echo -e "================================================="
 
 time sleep 3
 
