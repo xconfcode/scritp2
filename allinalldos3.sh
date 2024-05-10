@@ -150,13 +150,15 @@ clear
 
 echo -e "\033[32m"  # Start green text
 echo "$header1"
-echo
+
 echo -e "\nkey_activation for arch linux....\n"
-echo -e "\033[32m"  # Start green text
+
 pacman-key --init
-echo -e "\033[32m"  # Start green text
+
 pacman-key --populate
-echo -e "\033[32m"  # Start green text
+
+
+
 pacman -Syy archlinux-keyring --noconfirm
 
 
