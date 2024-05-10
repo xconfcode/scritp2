@@ -10,121 +10,137 @@ echo -e "\033[32m"  # Start green text
 
 
 
-header1=$(<<'EOF'
+header1="
 ====================================================================================================================================================
+
 [[ 1. install key ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
-header2=$(<<'EOF'
+header2="
 ====================================================================================================================================================
+
 [[ 2. USER-INPUT ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
 
-header3=$(<<'EOF'
+header3="
 ====================================================================================================================================================
+
 [[ 3. CREATE-PARTITIONS ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
 
 
-header4=$(<<'EOF'
+header4="
 ====================================================================================================================================================
+
 [[  4. FORMAT-PARTITIONS ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
 
-header5=$(<<'EOF'
+header5="
 ====================================================================================================================================================
+
 [[ 5. MOUNT-FILE-SYSTEM ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
-header6=$(<<'EOF'
+header6="
 ====================================================================================================================================================
+
 [[ 6. INSTALL-KERNAL-BASE-PACKAGES ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
-header7=$(<<'EOF'
+header7="
 ====================================================================================================================================================
+
 [[ 7. STORING-MOUNT]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
-header8=$(<<'EOF'
+header8="
 ====================================================================================================================================================
+
 [[ 8. ARCH-CHROOT]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
-header9=$(<<'EOF'
+header9="
 ====================================================================================================================================================
+
 [[ 9. CREATE-CHROOT-SCRIPT ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
-header10=$(<<'EOF'
+header10="
 ====================================================================================================================================================
+
 [[ 10. USER-PERMISSION ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
-header11=$(<<'EOF'
+header11="
 ====================================================================================================================================================
+
 [[ 11. GENERATE-LANG-AND-TIME ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
-header12=$(<<'EOF'
+header12="
 ====================================================================================================================================================
+
 [[ 12. CREATE-USER ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
-header13=$(<<'EOF'
+header13="
 ====================================================================================================================================================
+
 [[ 13. HOST-CONFIG ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
-header14=$(<<'EOF'
+header14="
 ====================================================================================================================================================
+
 [[ 14. INSTALL-GRUB-AND-DEPENDANCY ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
-header15=$(<<'EOF'
+header15="
 ====================================================================================================================================================
+
 [[ 15. INSTALL-GRUB-BOOTLOADER ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
-header16=$(<<'EOF'
+header16="
 ====================================================================================================================================================
+
 [[ 16. ENABLING-SYSTEMES ]] 
 
 ====================================================================================================================================================
-EOF)
+"
 
 
 # ==================================================================================
@@ -133,13 +149,16 @@ EOF)
 
 # ==================================================================================
 
-
+clear 
+echo -e "\033[32m"  # Start green text
 echo "$header1"
 
  
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 # Reset text color
@@ -158,12 +177,17 @@ echo -e "\033[32m"  # Start green text
 # ==================================================================================
 # [[ 2. USER-INPUT ]] 
 # ==================================================================================
-
+clear 
+echo -e "\033[32m"  # Start green text
 echo "$header2"
 echo
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
+
+
 
 
 
@@ -203,12 +227,15 @@ echo -e "\033[0m"  # Reset to default color
 # ==================================================================================
 # [[ 3. CREATE-PARTITIONS ]] 
 # ==================================================================================
-
+clear 
+echo -e "\033[32m"  # Start green text
 echo "$header3" 
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 
@@ -233,12 +260,16 @@ echo -e "\033[0m"  # Reset to default color
 # [[  4. FORMAT-PARTITIONS ]] 
 # ==================================================================================
 # make filesystems
-
+clear 
+echo -e "\033[32m"  # Start green text
 echo "$header4" 
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
+
 
 
 echo -e "\nCreating Filesystems...\n"
@@ -249,23 +280,23 @@ swapon /dev/"${SWAP}"
 mkfs.ext4 /dev/"${ROOT}"
 echo -e "\nSuccessfully Formatted\n"
 time sleep 3
-clear
-echo -e "\033[32m"  # Start green text
 
 
 
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
 
 # ==================================================================================
 # [[ 5. MOUNT-FILE-SYSTEM ]] 
 # ==================================================================================
+clear 
+echo -e "\033[32m"  # Start green text
+
 echo "$header5" 
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
-
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 echo -e "\nstarted Mounting\n"
 mount  /dev/"${ROOT}" /mnt
@@ -275,21 +306,20 @@ echo -e "\nSuccessfully Mounted\n"
 time sleep 3
 
 clear 
-echo -e "\033[32m"  # Start green text
 
-
-
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
 
 # ==========================================================================
 # [[ 6. INSTALL-KERNAL-BASE-PACKAGES ]] 
 # ==========================================================================
+echo -e "\033[32m"  # Start green text
+
 echo "$header5" 
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 echo -e "\nInstalling Base system into Linux kernal ...\n"
@@ -311,11 +341,15 @@ echo -e "\033[0m"  # Reset to default color
 # ==========================================================================
 # [[ 7. STORING-MOUNT]]       
 # ==========================================================================
+echo -e "\033[32m"  # Start green text
+
 echo "$header7" 
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 # Generate Mount
@@ -325,23 +359,22 @@ echo "Successfly storred all mount"
 time sleep 3
 
 clear
-echo -e "\033[32m"  # Start green text
 
-
-
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
 
 # ==========================================================================
 
 # ==========================================================================
 # [[ 8. ARCH-CHROOT ]]      
 # ==========================================================================
+echo -e "\033[32m"  # Start green text
+
 echo "$header8" 
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 echo "copy arch-chroot scripts"
@@ -352,11 +385,15 @@ time sleep 3
 # ============================================
 # copy arch-chroot
 # ============================================
+echo -e "\033[32m"  # Start green text
+
 echo "$header9" 
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 
@@ -370,19 +407,19 @@ clear
 # copy arch-chroot
 # ============================================
 
+echo -e "\033[32m"  # Start green text
+
 echo "$header10" 
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
-
-
-echo -e "\033[32m"  # Start green text
-
-
-
 # Reset text color
 echo -e "\033[0m"  # Reset to default color
+
+
+
+
 
 
 echo "uncomment for profile wheels"
@@ -420,12 +457,16 @@ echo -e "\033[0m"  # Reset to default color
 # Time
 
 clear
-echo "$header11" 
 echo -e "\033[32m"  # Start green text
+
+echo "$header11" 
+
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 
@@ -472,10 +513,7 @@ echo -e "\nSuccessfly Uncomment for locale-gen....\n"
 
 time sleep 3
 clear
-clear
 
-
-echo -e "\033[32m"  # Start green text
 
 
 
@@ -485,12 +523,14 @@ echo -e "\033[0m"  # Reset to default color
 # [[ 12. CREATE-USER ]] 
 # ==========================================================================
 clear
-
+echo -e "\033[32m"  # Start green text
 echo "$header12" 
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 
@@ -518,15 +558,17 @@ echo -e "\033[0m"  # Reset to default color
 # [[ 13. HOST-CONFIG ]] 
 # ==========================================================================
 clear
-clear
+echo -e "\033[32m"  # Start green text
 echo "$header13" 
 
-echo -e "\033[32m"  # Start green text
+
 
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 
@@ -548,10 +590,7 @@ echo -e "\nHostName successfully Configure...\n"
 
 time sleep 3
 clear
-clear
 
-
-echo -e "\033[32m"  # Start green text
 
 
 
@@ -561,12 +600,16 @@ echo -e "\033[0m"  # Reset to default color
 # [[ 14. INSTALL-GRUB-AND-DEPENDANCY ]] 
 # ==========================================================================
 
+echo -e "\033[32m"  # Start green text
+
 echo "$header14" 
 
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 #  Create boot dir and mount in it
@@ -578,13 +621,9 @@ echo -e "\nSuccessfly installed grub & dependancy....\n"
 time sleep 3
 clear
 
-clear
-
-
-echo -e "\033[32m"  # Start green text
-
-
-
+echo "Press Enter to continue..."
+read -r
+echo "Continuing..."
 # Reset text color
 echo -e "\033[0m"  # Reset to default color
 
@@ -622,6 +661,8 @@ echo "$header15"
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 
@@ -663,12 +704,14 @@ clear
 #  [[ 15. INSTALL-GRAPHIC ]] 
 # ==========================================================================
 echo -e "\033[32m"  # Start green text
-
+echo -e "\033[32m"  # Start green text
 echo "$header15"
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 
@@ -684,16 +727,18 @@ clear
 # [[ 16. ENABLING-SYSTEMES ]] 
 # ==========================================================================
 clear
-
+echo -e "\033[32m"  # Start green text
 echo "$header16"
 
 echo "Press Enter to continue..."
 read -r
 echo "Continuing..."
+# Reset text color
+echo -e "\033[0m"  # Reset to default color
 
 
 
-echo -e "\033[32m"  # Start green text
+
 
 
 
