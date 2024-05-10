@@ -168,13 +168,6 @@ clear
 echo -e "\033[32m"  # Start green text
 echo "$header2" 
 
-echo "Press Enter to continue..."
-read -r
-echo "Continuing..."
-# Reset text color
-echo -e "\033[0m"  # Reset to default color
-
-
 
 # Reset text color
 echo -e "\033[0m"  # Reset to default color
