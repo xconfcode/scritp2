@@ -581,7 +581,8 @@ echo -e "\033[0m"  # Reset to default color
 
 # Bootloader installation (UEFI systems)
 echo -e "\n install by grub...\n"
-grub-install --target=x86_64-efi --bootloader-id=grub_uefi 
+
+grub-install --target=i386-pc  /dev/sda 
 
 echo -e "\nggrub install bootloader !!!!....\n"
 
