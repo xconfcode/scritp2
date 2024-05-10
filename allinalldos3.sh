@@ -146,31 +146,17 @@ header16="
 
 # ==================================================================================
 
-clear
-
-echo -e "\033[32m"  # Start green text (once at the beginning)
-
-echo "** Activating Key for Arch Linux **"  # Emphasize with double quotes
-
-echo -e "\n"
-
-# Key activation steps (all green)
-echo "Initializing pacman key..."
+clear 
+echo -e "\033[32m"  # Start green text
+echo "$header1"
+echo -e "\nkey_activation for arch linux....\n"
 pacman-key --init
-
-echo "Populating pacman key database..."
 pacman-key --populate
-
-echo "Installing archlinux-keyring..."
 pacman -Syy archlinux-keyring --noconfirm
 
-echo -e "\nSuccessfully attached archlinux keyring."
-
-echo -e "Pausing for 3 seconds..."
-sleep 3
-
-
-
+echo -e "\nSuccessfully archlinux keyring attached....\n"
+echo -e "\033[0m\nSuccessfully archlinux keyring attached....\n"
+time sleep 3
 
 
 # ==================================================================================
@@ -200,7 +186,7 @@ time sleep 3
 # [[ 3. USER-INPUT ]] 
 # ==================================================================================
 clear 
-
+echo -e "\033[32m"  # Start green text
 echo "$header3"
 echo
 
@@ -237,7 +223,7 @@ clear
 # ==================================================================================
 # make filesystems
 clear 
-
+echo -e "\033[32m"  # Start green text
 echo "$header4" 
 
 
@@ -258,8 +244,7 @@ time sleep 3
 # [[ 5. MOUNT-FILE-SYSTEM ]] 
 # ==================================================================================
 clear 
-
-
+echo -e "\033[32m"  # Start green text
 echo "$header5" 
 
 
@@ -276,7 +261,7 @@ clear
 # ==========================================================================
 # [[ 6. INSTALL-KERNAL-BASE-PACKAGES ]] 
 # ==========================================================================
-
+echo -e "\033[32m"  # Start green text
 echo "$header5" 
 
 
@@ -299,8 +284,7 @@ clear
 # ==========================================================================
 # [[ 7. STORING-MOUNT]]       
 # ==========================================================================
-
-
+echo -e "\033[32m"  # Start green text
 echo "$header7" 
 
 
@@ -318,8 +302,7 @@ clear
 # ==========================================================================
 # [[ 8. ARCH-CHROOT ]]      
 # ==========================================================================
-
-
+echo -e "\033[32m"  # Start green text
 echo "$header8" 
 
 
@@ -333,8 +316,8 @@ time sleep 3
 # ============================================
 # copy arch-chroot
 # ============================================
+clear
 echo -e "\033[32m"  # Start green text
-
 echo "$header9" 
 
 
@@ -351,8 +334,7 @@ clear
 # copy arch-chroot
 # ============================================
 
-
-
+echo -e "\033[32m"  # Start green text
 echo "$header10" 
 
 
@@ -386,8 +368,7 @@ clear
 # Time
 
 clear
-
-
+echo -e "\033[32m"  # Start green text
 echo "$header11" 
 
 
@@ -401,7 +382,7 @@ clear
 
 
 
-
+echo -e "\033[32m"  # Start green text
 
 
 
@@ -414,7 +395,7 @@ time sleep 3
 clear
 
 
-
+echo -e "\033[32m"  # Start green text
 
 
 
@@ -437,7 +418,7 @@ clear
 # [[ 12. CREATE-USER ]] 
 # ==========================================================================
 clear
-
+echo -e "\033[32m"  # Start green text
 echo "$header12" 
 
 
@@ -445,8 +426,8 @@ echo -e "\nEnter root password"  # Newline with echo -e
 passwd
 echo -e "\nstart creating user...\n"
 useradd -m -s /bin/bash "$USER"
-useradd -m -G wheel "$USER"
 echo "$USER:$PASSWORD" | chpasswd
+usermod -aG wheel "$USER"
 echo -e "\nSuccessfly user created...\n "
 
 
@@ -458,7 +439,7 @@ clear
 # [[ 13. HOST-CONFIG ]] 
 # ==========================================================================
 clear
-
+echo -e "\033[32m"  # Start green text
 echo "$header13" 
 
 
@@ -489,17 +470,14 @@ clear
 # [[ 14. INSTALL-GRUB-AND-DEPENDANCY ]] 
 # ==========================================================================
 
-
-
+echo -e "\033[32m"  # Start green text
 echo "$header14" 
 
 
 #  Create boot dir and mount in it
 
 echo -e "\nInstalling grub and dependencies...\n"
-# pacman -S grub efibootmgr os-prober mtools networkmanager network-manager-applet wpa_supplicant dialog base-devel linux-headers  cups openssh blueman git intel-ucode nano vim neovim   --noconfirm
-
-pacman -S grub efibootmgr os-prober mtools --noconfirm
+pacman -S grub efibootmgr os-prober mtools networkmanager network-manager-applet wpa_supplicant dialog base-devel linux-headers  cups openssh blueman git intel-ucode nano vim neovim   --noconfirm
 echo -e "\nSuccessfly installed grub & dependancy....\n"
 
 time sleep 3
@@ -526,8 +504,7 @@ time sleep 3
 clear
 
 
-
-
+echo -e "\033[32m"  # Start green text
 echo "$header15" 
 
 
@@ -588,9 +565,7 @@ echo -e "\033[32m"  # Start green text
 echo "$header16"
 
 # Enable essential services
-systemctl enable NetworkManager 
-
-# bluetooth cups sshd
+systemctl enable NetworkManager bluetooth cups sshd
 
 clear 
 echo -e "\nenabled NetworkManager !!!!....\n"
@@ -604,7 +579,6 @@ echo -e "\nDont forget typr umount -R /mnt.....!!!!....\n"
 
 time sleep 3
 
-echo -e "\033[0m"  # Reset terminal formatting (optional)  # Placed at the end
 EOF
 
 REALEND
@@ -619,5 +593,4 @@ echo -e "\narch-chroot scipt excuteded successfully !!!!....\n"
 time sleep 3
 arch-chroot /mnt /bin/bash /n2.sh
 time sleep 3
-echo -e "\033[0m"  # Reset terminal formatting (optional)  # Placed at the end
 
