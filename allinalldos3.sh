@@ -155,7 +155,8 @@ pacman-key --init
 echo -e "\nupdating keys....\n"
 pacman-key --populate
 
-echo -e "\Installing keys....\n"
+echo -e "\033[32m"  # Start green text
+echo -e "\nInstalling keys....\n"
 pacman -Syy archlinux-keyring --needed --noconfirm
 
 echo -e "\Successfully archlinux keyring attached....!!!!!\n"
