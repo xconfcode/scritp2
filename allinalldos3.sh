@@ -261,7 +261,7 @@ time sleep 3
 # ==================================================================================
 clear 
 echo -e "\033[32m"  # Start green text
-echo "$header5" 
+echo "$header6" 
 
 
 echo -e "\nstarted Mounting\n"
