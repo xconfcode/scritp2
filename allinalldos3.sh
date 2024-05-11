@@ -279,19 +279,20 @@ clear
 # ==========================================================================
 clear
 echo -e "\033[32m"  # Start green text
-echo "$header5" 
+echo "$header6" 
 
-echo -e "\nInstalling Base system into Linux kernal ...\n"
-echo -e "\nInstalling Arch Linux base...\n"
+echo
+echo -e "Installing Base system into Linux kernal ..."
+
+echo
+echo
+echo -e "Installing Arch Linux base..."
 
 pacstrap -K /mnt base linux linux-firmware sudo nano
 
  echo -e "\033[32m"  # Start green text
 echo "Installed successsfly  Base system into Linux kernal !!!!"
 time sleep 3
-
-clear
-
 
 
 
