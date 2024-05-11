@@ -11,10 +11,10 @@ echo -e "\033[32m"  # Start green text
 
 
 
-header6="
+header1="
 ====================================================================================================================================================
 
-[[ 6. INSTALL-KERNAL-BASE-PACKAGES ]] 
+[[ 1. install key ]] 
 
 ====================================================================================================================================================
 "
@@ -26,24 +26,31 @@ header6="
 
 # ==================================================================================
 
-# ==========================================================================
-# [[ 6. INSTALL-KERNAL-BASE-PACKAGES ]] 
-# ==========================================================================
-clear
+clear 
 echo -e "\033[32m"  # Start green text
-echo "$header6" 
+echo "$header1"
 
-echo
-echo -e "Installing Base system into Linux kernal ..."
+echo -e "\nkey_activation for arch linux.....\n"
 
-echo
-echo
-echo -e "Installing Arch Linux base..."
+pacman-key --init
+echo -e "\nupdating keys....\n"
+pacman-key --populate
+echo -e "\033[32m"  # Start green text
+echo -e "================================================="
+echo -e ""
+echo -e "\nInstalling keys....\n"
+echo -e ""
+pacman -Syy archlinux-keyring --needed --noconfirm 
 
-pacstrap -K /mnt base linux linux-firmware sudo nano
 
- echo -e "\033[32m"  # Start green text
-echo "Installed successsfly  Base system into Linux kernal !!!!"
+echo -e "================================================="
+echo -e ""
+echo -e "\033[32m"  # Start green text
+echo -e "\nSuccessfully archlinux keyring attached....!!!!!\n"
+echo -e ""
+echo -e "\033[32m"  # Start green text
+echo -e "================================================="
+
 time sleep 3
 
 
