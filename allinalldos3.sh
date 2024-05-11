@@ -281,11 +281,11 @@ clear
 echo -e "\033[32m"  # Start green text
 echo "$header6" 
 
-echo
+echo -e  ""
 echo -e "Installing Base system into Linux kernal ..."
 
-echo
-echo
+echo -e  ""
+echo -e  ""
 echo -e "Installing Arch Linux base..."
 
 pacstrap -K /mnt base linux linux-firmware sudo nano
