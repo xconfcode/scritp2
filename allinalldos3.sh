@@ -156,21 +156,18 @@ pacman-key --init
 echo -e "\nupdating keys....\n"
 pacman-key --populate
 
-clear 
-echo -e "\033[32m"  # Start green text
-echo "$header1"
 echo -e "================================================="
-echo
+echo -e ""
 echo -e "\nInstalling keys....\n"
-echo
+echo -e ""
 pacman -Syy archlinux-keyring --needed --noconfirm 
 
 
 echo -e "================================================="
-echo
+echo -e ""
 echo -e "\033[32m"  # Start green text
 echo -e "\nSuccessfully archlinux keyring attached....!!!!!\n"
-echo
+echo -e ""
 echo -e "\033[32m"  # Start green text
 echo -e "================================================="
 
@@ -204,7 +201,7 @@ time sleep 3
 clear 
 echo -e "\033[32m"  # Start green text
 echo "$header3"
-echo
+echo -e ""
 
 
 echo "Please enter EFI paritition: (example /dev/sda1 or /dev/nvme0n1p1)"
