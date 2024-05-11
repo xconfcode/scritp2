@@ -488,7 +488,9 @@ echo "$header14"
 #  Create boot dir and mount in it
 
 echo -e "\nInstalling grub and dependencies...\n"
-pacman -S grub efibootmgr os-prober mtools networkmanager network-manager-applet wpa_supplicant dialog base-devel linux-headers  cups openssh blueman git intel-ucode nano vim neovim   --noconfirm
+# pacman -S grub efibootmgr os-prober mtools networkmanager network-manager-applet wpa_supplicant dialog base-devel linux-headers  cups openssh blueman git intel-ucode nano vim neovim   --noconfirm
+pacman -S grub efibootmgr os-prober mtools networkmanager    --noconfirm
+
 echo -e "\nSuccessfly installed grub & dependancy....\n"
 
 time sleep 3
