@@ -31,9 +31,9 @@ echo -e "\033[32m"  # Start green text
 echo "$header1"
 
 echo -e "\nkey_activation for arch linux.....\n"
-
 pacman-key --init
-echo -e "\nupdating keys....\n"
+
+echo -e "updating keys...."
 pacman-key --populate
 echo -e "\033[32m"  # Start green text
 echo -e "================================================="
